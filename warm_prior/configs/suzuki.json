@@ -1,0 +1,123 @@
+{
+  "campaign": "suzuki_3arm",
+  "seeds": [
+    41,
+    42,
+    43
+  ],
+  "pool": "suzuki/suzuki_pool.pkl",
+  "test": "suzuki/suzuki_test.pkl",
+  "methods": {
+    "random": {
+      "output_name": "arm-reliability_adjust_warm_h16_w200_s100_b50_init50_r20_model_unc_random",
+      "args": {
+        "arm": "reliability_adjust_warm",
+        "fp_type": "drfp",
+        "gt_label_col": "gt",
+        "hidden_dim": 16,
+        "id_col": "rxn_w_cond",
+        "initial_random_size": 50,
+        "num_chains": 1,
+        "num_samples": 100,
+        "num_samples_per_round": 50,
+        "num_warmup": 200,
+        "on_test_overlap": "error",
+        "posterior_prior_scale_floor": 0.001,
+        "posterior_prior_scale_mult": 1.0,
+        "pseudo_label_col": "pseudo_label",
+        "report_teacher_calibration": true,
+        "sample_method": "model_unc",
+        "selection_strategy": "random",
+        "teacher_beta_alpha0": 2.0,
+        "teacher_beta_beta0": 2.0,
+        "total_rounds": 20,
+        "yield_col": "rxn_yield",
+        "yield_threshold": 20.0,
+        "compress_outputs": false
+      }
+    },
+    "RA": {
+      "output_name": "arm-reliability_adjust_warm_h16_w200_s100_b50_init50_r20_model_unc_top_unc",
+      "args": {
+        "arm": "reliability_adjust_warm",
+        "fp_type": "drfp",
+        "gt_label_col": "gt",
+        "hidden_dim": 16,
+        "id_col": "rxn_w_cond",
+        "initial_random_size": 50,
+        "num_chains": 1,
+        "num_samples": 100,
+        "num_samples_per_round": 50,
+        "num_warmup": 200,
+        "on_test_overlap": "error",
+        "posterior_prior_scale_floor": 0.001,
+        "posterior_prior_scale_mult": 1.0,
+        "pseudo_label_col": "pseudo_label",
+        "report_teacher_calibration": true,
+        "sample_method": "model_unc",
+        "selection_strategy": "top_unc",
+        "teacher_beta_alpha0": 2.0,
+        "teacher_beta_beta0": 2.0,
+        "total_rounds": 20,
+        "yield_col": "rxn_yield",
+        "yield_threshold": 20.0,
+        "compress_outputs": false
+      }
+    },
+    "naive": {
+      "output_name": "arm-naive_warm_h16_w200_s100_b50_init50_r20_model_unc_top_unc",
+      "args": {
+        "arm": "naive_warm",
+        "fp_type": "drfp",
+        "gt_label_col": "gt",
+        "hidden_dim": 16,
+        "id_col": "rxn_w_cond",
+        "initial_random_size": 50,
+        "num_chains": 1,
+        "num_samples": 100,
+        "num_samples_per_round": 50,
+        "num_warmup": 200,
+        "on_test_overlap": "error",
+        "posterior_prior_scale_floor": 0.001,
+        "posterior_prior_scale_mult": 1.0,
+        "pseudo_label_col": "pseudo_label",
+        "report_teacher_calibration": false,
+        "sample_method": "model_unc",
+        "selection_strategy": "top_unc",
+        "teacher_beta_alpha0": 2.0,
+        "teacher_beta_beta0": 2.0,
+        "total_rounds": 20,
+        "yield_col": "rxn_yield",
+        "yield_threshold": 20.0,
+        "compress_outputs": false
+      }
+    },
+    "vanilla": {
+      "output_name": "arm-vanilla_h16_w200_s100_b50_init50_r20_model_unc_top_unc",
+      "args": {
+        "arm": "vanilla",
+        "fp_type": "drfp",
+        "gt_label_col": "gt",
+        "hidden_dim": 16,
+        "id_col": "rxn_w_cond",
+        "initial_random_size": 50,
+        "num_chains": 1,
+        "num_samples": 100,
+        "num_samples_per_round": 50,
+        "num_warmup": 200,
+        "on_test_overlap": "error",
+        "posterior_prior_scale_floor": 0.001,
+        "posterior_prior_scale_mult": 1.0,
+        "pseudo_label_col": "pseudo_label",
+        "report_teacher_calibration": true,
+        "sample_method": "model_unc",
+        "selection_strategy": "top_unc",
+        "teacher_beta_alpha0": 2.0,
+        "teacher_beta_beta0": 2.0,
+        "total_rounds": 20,
+        "yield_col": "rxn_yield",
+        "yield_threshold": 20.0
+      }
+    }
+  }
+}

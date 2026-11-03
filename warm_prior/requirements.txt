@@ -1,0 +1,11 @@
+# CUDA-enabled dependencies for Python 3.9 on Linux.
+--find-links https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
+
+# Runtime dependencies for the reliability-adjust warm prior experiments.
+jax[cuda11_pip]==0.4.8
+numpyro==0.11.0
+numpy==1.24.4
+scipy==1.9.1
+pandas==2.3.3
+scikit-learn==1.1.3
+
