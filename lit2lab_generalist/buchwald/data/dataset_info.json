@@ -1,0 +1,18 @@
+{
+  "buchwald_sft": {
+    "file_name": "example_sft.json",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "buchwald_test": {
+    "file_name": "example_test.json",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  }
+}
